@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine Bhavya ❤️</title>
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff4e8d,#ff99cc);
+  font-family: 'Poppins', sans-serif;
+  overflow:hidden;
+}
+
+.container{
+  text-align:center;
+  color:white;
+  animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+  font-size:2.5em;
+  animation: glow 2s infinite alternate;
+}
+
+p{
+  font-size:1.2em;
+  margin-top:10px;
+}
+
+img{
+  width:220px;
+  height:220px;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 0 25px white;
+  animation:float 3s ease-in-out infinite;
+}
+
+button{
+  margin-top:25px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4e8d;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff4e8d;
+  color:white;
+  box-shadow:0 0 20px white;
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px white;}
+  to{text-shadow:0 0 25px white;}
+}
+
+/* Hearts */
+.heart{
+  position:absolute;
+  color:white;
+  font-size:20px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh);}
+  100%{transform:translateY(110vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Valentine’s Day Bhavya ❤️</h1>
+  <p>You are my today and all of my tomorrows 💕</p>
+  <img src="couple.jpg" alt="Our Love">
+  <br>
+  <button onclick="love()">Click For Surprise 💖</button>
+</div>
+
+<audio id="music" src="song.mp3" loop></audio>
+
+<script>
+const music = document.getElementById("music");
+
+document.body.addEventListener("click", function(){
+    music.play();
+},{once:true});
+
+function love(){
+  alert("I Love You Bhavya ❤️ Forever Yours – Ritik 💞");
+}
+
+/* Falling Hearts */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+2)+"s";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },5000);
+
+},400);
+</script>
+
+</body>
+</html>
