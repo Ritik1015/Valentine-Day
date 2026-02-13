@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Valentine Bhavya ❤️</title>
 
@@ -91,7 +94,6 @@ button:hover{
   0%{transform:translateY(-10vh);}
   100%{transform:translateY(110vh);}
 }
-
 </style>
 </head>
 
@@ -102,7 +104,7 @@ button:hover{
   <p>You are my today and all of my tomorrows 💕</p>
   <img src="couple.jpg" alt="Our Love">
   <br>
-  <button onclick="love()">Click For Surprise 💖</button>
+  <button onclick="openSurprise()">Click For Surprise 💖</button>
 </div>
 
 <audio id="music" src="song.mp3" loop></audio>
@@ -114,8 +116,8 @@ document.body.addEventListener("click", function(){
     music.play();
 },{once:true});
 
-function love(){
-  alert("I Love You Bhavya ❤️ Forever Yours – Ritik 💞");
+function openSurprise(){
+   window.location.href="surprise.html?version=" + new Date().getTime();
 }
 
 /* Falling Hearts */
