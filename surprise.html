@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever Us ❤️</title>
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  font-family:'Poppins',sans-serif;
+  color:white;
+  text-align:center;
+  overflow:hidden;
+  animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+  font-size:2.2em;
+  animation:glow 2s infinite alternate;
+}
+
+p{
+  max-width:320px;
+  font-size:1.1em;
+  margin:10px;
+}
+
+img{
+  width:230px;
+  height:230px;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 0 25px white;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px white;}
+  to{text-shadow:0 0 25px white;}
+}
+
+/* Floating Hearts */
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh);}
+  100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Our Forever Story ❤️</h1>
+
+<p>
+"Tum meri zindagi ka sabse khoobsurat hissa ho.  
+Har din tumhare saath ek nayi khushi laata hai.  
+Main har janam me sirf tumhe hi chahunga Bhavya 💞"
+</p>
+
+<img src="couple2.jpg" alt="Our Love">
+
+<p>
+Happy Valentine’s Day My Love 💖  
+Forever Yours – Ritik
+</p>
+
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+2)+"s";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },5000);
+
+},400);
+</script>
+
+</body>
+</html>
